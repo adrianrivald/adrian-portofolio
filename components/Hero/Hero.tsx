@@ -45,13 +45,18 @@ export function Hero({ aboutRef, expRef, projectRef }: HeroProps) {
     <div className="w-full lg:w-1/2 sticky lg:relative top-0 z-50">
       <div className="lg:sticky bg-gradient-to-r from-[#262626] to-indigo-950 lg:bg-none block w-auto text-white inset-x-0 p-6 lg:top-20 lg:min-h-[20%] flex lg:block justify-between border-b border-slate-600 lg:border-none shadow lg:shadow-none">
         <div>
-          <h1 className="text-2xl lg:text-4xl m-0">
+          <h1 className="hidden md:block text-2xl lg:text-4xl m-0">
             Hello, I'm Adrian Rivaldy
           </h1>
-          <h2 className="text-xl lg:text-2xl mt-4">Frontend Engineer</h2>
+          <h2 className="hidden md:block text-xl lg:text-2xl mt-4">
+            Frontend Engineer
+          </h2>
         </div>
-        <div>
+        <div className="w-full md:w-auto">
           <div className="relative lg:mt-8 text-lg">
+            <h1 className="block md:hidden text-2xl lg:text-4xl m-0 mb-4">
+              Hello, I'm Adrian Rivaldy
+            </h1>
             <div className="relative flex flex-row lg:flex-col gap-4">
               <div
                 onClick={onClickAbout}

@@ -25,7 +25,7 @@ export function Content({
 
   return (
     <section className="lg:w-1/2">
-      <div className="mt-12 lg:mt-0 lg:p-6 text-white">
+      <div className="pt-12 lg:mt-0 lg:p-6 text-white">
         <div ref={aboutRef} className="border-b border-slate-600 pb-2">
           <p className="text-lg leading-8 pt-0 p-8">
             I have been working as a Front-end Developer for +5 years,
@@ -39,9 +39,9 @@ export function Content({
         </div>
         <div
           ref={expRef}
-          className="flex flex-col gap-8 mt-12 text-white border-b border-slate-600 pb-10"
+          className="flex flex-col gap-8 pt-12 text-white border-b border-slate-600 pb-10"
         >
-          <h2 className="lg:text-2xl leading-8 px-8">Work Experiences</h2>
+          <h2 className="text-2xl leading-8 px-8">Work Experiences</h2>
           {companies?.map((company) => (
             <ExperienceCard company={company} onClickCard={onClickCard} />
           ))}
@@ -56,9 +56,9 @@ export function Content({
 
         <div
           ref={projectRef}
-          className="flex flex-col gap-8 mt-12 text-white border-b border-slate-600 pb-10"
+          className="flex flex-col gap-8 pt-12 text-white border-b border-slate-600 pb-10"
         >
-          <h2 className="lg:text-2xl leading-8 px-8">Projects Portofolio</h2>
+          <h2 className="text-2xl leading-8 px-8">Projects Portofolio</h2>
           {projects?.map((project) => (
             <PortofolioCard project={project} onClickCard={onClickCard} />
           ))}
@@ -71,9 +71,11 @@ export function Content({
           </div>
         </div>
 
-        <div className="mt-8">
-          Built with Next.js, Tailwind CSS, coded in Visual Code Studio. <br />{" "}
-          Design inspired by :{" "}
+        <div className="mt-8 px-8">
+          <span className="text-sm">
+            Built with Next.js, Tailwind CSS, coded in Visual Code Studio.{" "}
+            <br /> Design inspired by :{" "}
+          </span>
           <Link
             href="https://brittanychiang.com/"
             target="_blank"
