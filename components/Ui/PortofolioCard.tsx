@@ -27,7 +27,7 @@ export function PortofolioCard({ project, onClickCard }: PortofolioCardProps) {
   return (
     <div
       onClick={() => onClickCard(project.title)}
-      className="flex flex-col lg:flex-row gap-4 lg:gap-8 p-8 hover:border-neutral-500 hover:shadow-lg hover:scale-[1.05] transition-all rounded-xl hover:bg-indigo-950 cursor-pointer text-neutral-300 hover:text-neutral-100"
+      className="flex flex-col lg:flex-row gap-4 lg:gap-8 p-8 hover:border-neutral-500 hover:shadow-lg lg:hover:scale-[1.05] transition-all rounded-xl hover:bg-indigo-950 cursor-pointer text-neutral-300 hover:text-neutral-100"
       onMouseEnter={onHoverCard}
       onMouseLeave={onBlurCard}
     >
@@ -36,7 +36,7 @@ export function PortofolioCard({ project, onClickCard }: PortofolioCardProps) {
           src={project.image}
           width={800}
           height={400}
-          className={`w-40 h-28 object-cover rounded-md ${
+          className={`w-full h-[350px] lg:w-40 lg:h-28 object-cover object-top rounded-md ${
             isHovered ? "border border-[#8BBCCC]" : ""
           }`}
           alt={project?.title}
