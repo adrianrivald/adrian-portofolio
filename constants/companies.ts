@@ -12,6 +12,7 @@ export const companies = [
       "NX",
       "Vite",
       "Typescript",
+      "Chakra UI"
     ],
   },
   {
