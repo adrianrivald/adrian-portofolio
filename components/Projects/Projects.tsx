@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 import { BsArrowUpRight } from "react-icons/bs";
 import { allProjects } from "../../constants/project";
-import { FaArrowLeft, FaSortUp } from "react-icons/fa";
+import { FaArrowLeft, FaSortDown, FaSortUp } from "react-icons/fa";
 import { Bubble } from "../Ui/Bubble";
 import { useEffect } from "react";
 
@@ -11,37 +11,66 @@ export function Projects() {
   const [sortMode, setSortMode] = React.useState("");
 
   const onSort = (mode: string) => {
+    setSortMode(mode);
     if (mode === "name") {
-      setSortMode(mode);
       const newArr = [...projects].sort((a, b) =>
         a.title.localeCompare(b.title)
       );
-      setProjects(newArr);
+      if (JSON.stringify(projects) == JSON.stringify(newArr)) {
+        const descArr = [...projects].sort((a, b) =>
+          b.title.localeCompare(a.title)
+        );
+        setProjects(descArr);
+      } else {
+        setProjects(newArr);
+      }
     }
     if (mode === "stacks") {
-      setSortMode(mode);
       const newArr = [...projects].sort(
         (a, b) => b.bubbles.length - a.bubbles.length
       );
-      setProjects(newArr);
+      if (JSON.stringify(projects) == JSON.stringify(newArr)) {
+        const descArr = [...projects].sort(
+          (a, b) => a.bubbles.length - b.bubbles.length
+        );
+        setProjects(descArr);
+      } else {
+        setProjects(newArr);
+      }
     }
     if (mode === "year") {
-      setSortMode(mode);
       const newArr = [...projects].sort(
         (a, b) => parseInt(b.year) - parseInt(a.year)
       );
-      setProjects(newArr);
+      if (JSON.stringify(projects) == JSON.stringify(newArr)) {
+        const descArr = [...projects].sort(
+          (a, b) => parseInt(a.year) - parseInt(b.year)
+        );
+        setProjects(descArr);
+      } else {
+        setProjects(newArr);
+      }
     }
     if (mode === "link") {
-      setSortMode(mode);
       const newArr = [...projects].sort((a, b) => b.link.localeCompare(a.link));
-      setProjects(newArr);
+      if (JSON.stringify(projects) == JSON.stringify(newArr)) {
+        const descArr = [...projects].sort((a, b) =>
+          a.link.localeCompare(b.link)
+        );
+        setProjects(descArr);
+      } else {
+        setProjects(newArr);
+      }
     }
-    if (sortMode === mode) {
-      setProjects(allProjects);
-      setSortMode("");
-    }
+    // if (sortMode === mode) {
+    //   setProjects(allProjects);
+    //   setSortMode("");
+    // }
   };
+
+  useEffect(() => {
+    console.log(projects, "pro");
+  }, [projects]);
 
   return (
     <section className="w-full">
@@ -62,11 +91,10 @@ export function Projects() {
                       className="flex items-center gap-3 cursor-pointer"
                     >
                       Project{" "}
-                      <FaSortUp
-                        className={`transition-all ${
-                          sortMode === "name" ? "-scale-y-100" : ""
-                        }`}
-                      />
+                      <div className="flex flex-col gap-2">
+                        <FaSortUp className="-mb-3" />
+                        <FaSortDown className="-mt-3" />
+                      </div>
                     </div>
                   </th>
                   <th className="px-4">
@@ -75,11 +103,10 @@ export function Projects() {
                       className="flex items-center gap-3 cursor-pointer"
                     >
                       Tech stacks{" "}
-                      <FaSortUp
-                        className={`transition-all ${
-                          sortMode === "stacks" ? "-scale-y-100" : ""
-                        }`}
-                      />
+                      <div className="flex flex-col gap-2">
+                        <FaSortUp className="-mb-3" />
+                        <FaSortDown className="-mt-3" />
+                      </div>
                     </div>
                   </th>
                   <th className="px-4">
@@ -88,11 +115,10 @@ export function Projects() {
                       className="flex items-center gap-3 cursor-pointer"
                     >
                       Year{" "}
-                      <FaSortUp
-                        className={`transition-all ${
-                          sortMode === "year" ? "-scale-y-100" : ""
-                        }`}
-                      />
+                      <div className="flex flex-col gap-2">
+                        <FaSortUp className="-mb-3" />
+                        <FaSortDown className="-mt-3" />
+                      </div>
                     </div>
                   </th>
                   <th className="px-4">
@@ -101,11 +127,10 @@ export function Projects() {
                       className="flex items-center gap-3 cursor-pointer"
                     >
                       Link{" "}
-                      <FaSortUp
-                        className={`transition-all ${
-                          sortMode === "link" ? "-scale-y-100" : ""
-                        }`}
-                      />
+                      <div className="flex flex-col gap-2">
+                        <FaSortUp className="-mb-3" />
+                        <FaSortDown className="-mt-3" />
+                      </div>
                     </div>
                   </th>
                 </tr>

@@ -80,6 +80,7 @@ export function Content({
             href="https://brittanychiang.com/"
             target="_blank"
             rel="noopener noreferrer"
+            className="text-sm"
           >
             brittanychiang.com
           </Link>
