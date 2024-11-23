@@ -62,13 +62,13 @@ export function Content({
           {projects?.map((project) => (
             <PortofolioCard project={project} onClickCard={onClickCard} />
           ))}
-          <div
-            //   href="/resume.pdf"
-            //   target="_blank"
+
+          <Link
+            href="/projects"
             className="mt-4 text-xl flex gap-2 items-center text-neutral-300 hover:text-neutral-100 px-8"
           >
-            and more...
-          </div>
+            See more <BsArrowUpRight />
+          </Link>
         </div>
 
         <div className="mt-8 px-8">

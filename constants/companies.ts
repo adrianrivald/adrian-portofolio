@@ -19,7 +19,7 @@ export const companies = [
     title: "DataOn - HR SaaS Software",
     content:
       "The highlight of my job was developing features and pages for an ERP SaaS System called Sunfish, which was built using Stack technology React Micro-services. I was responsible to assure that the displays of the features and the logical function worked in accordance with the UI-UX design created by the Product Management Team.",
-    bubbles: ["React", "Micro-services", "HTML & CSS"],
+    bubbles: ["React", "Micro-services", "Ant Design" , "Material UI", "HTML & CSS"],
   },
   {
     dateRange: "Jul 2020 - Jun 2021",
