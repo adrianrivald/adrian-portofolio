@@ -81,7 +81,7 @@ export function Hero({ aboutRef, expRef, projectRef }: HeroProps) {
               </div>
             </div>
           </div>
-          <div className="flex flex-col gap-4 bottom-0 mt-8 lg:mt-0 lg:absolute">
+          <div className="flex flex-col gap-4 bottom-0 mt-4 lg:mt-8 lg:mt-0 lg:absolute">
             <div className="flex items-center gap-4">
               <Link
                 href="https://github.com/adrianrivald"

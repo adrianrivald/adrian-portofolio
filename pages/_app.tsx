@@ -2,6 +2,7 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
+import { Loading } from "../components";
 
 export default function App({ Component, pageProps }: AppProps) {
   const [loading, setLoading] = React.useState(false);
@@ -9,7 +10,11 @@ export default function App({ Component, pageProps }: AppProps) {
 
   useEffect(() => {
     const handleStart = () => setLoading(true);
-    const handleComplete = () => setLoading(false);
+    const handleComplete = () => {
+      setTimeout(() => {
+        setLoading(false);
+      }, 500);
+    };
 
     router.events.on("routeChangeStart", handleStart);
     router.events.on("routeChangeComplete", handleComplete);
@@ -23,9 +28,7 @@ export default function App({ Component, pageProps }: AppProps) {
   }, [router]);
   return (
     <>
-      {/* {loading && (
-        <div className="loading-screen h-screen bg-white">Loading...</div>
-      )} */}
+      {loading && <Loading />}
 
       <section className="max-w-full bg-gradient-to-r from-[#262626] to-indigo-950 text-neutral-100 py-8">
         <Component {...pageProps} />

@@ -62,15 +62,13 @@ export function Projects() {
         setProjects(newArr);
       }
     }
-    // if (sortMode === mode) {
-    //   setProjects(allProjects);
-    //   setSortMode("");
-    // }
   };
 
-  useEffect(() => {
-    console.log(projects, "pro");
-  }, [projects]);
+  // NOTES: Condition if want to reset sort
+  // if (sortMode === mode) {
+  //   setProjects(allProjects);
+  //   setSortMode("");
+  // }
 
   return (
     <section className="w-full">
@@ -102,7 +100,7 @@ export function Projects() {
                       onClick={() => onSort("stacks")}
                       className="flex items-center gap-3 cursor-pointer"
                     >
-                      Tech stacks{" "}
+                      Tech Stacks{" "}
                       <div className="flex flex-col gap-2">
                         <FaSortUp className="-mb-3" />
                         <FaSortDown className="-mt-3" />
