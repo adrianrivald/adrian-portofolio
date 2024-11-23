@@ -16,6 +16,7 @@ interface Company {
 export function ExperienceCard({ company, onClickCard }: CardProps) {
   return (
     <div
+      key={company.title}
       onClick={() => onClickCard(company.title)}
       className="flex flex-col xl:flex-row gap-4 lg:gap-8 p-8 hover:border-neutral-500 hover:shadow-lg lg:hover:scale-[1.05] transition-all rounded-xl hover:bg-indigo-950 text-neutral-300 hover:text-neutral-100"
     >

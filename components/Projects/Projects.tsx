@@ -81,9 +81,15 @@ export function Projects() {
         <div className="mt-4 border-b border-slate-600 pb-2">
           <div className="mt-4 overflow-auto">
             <table className="p-8 border-separate w-full">
-              <thead className="sticky top-0 text-left h-16 ">
+              <thead className="sticky top-0 text-left h-8 ">
                 <tr className="">
-                  <th className="px-4">
+                  <th
+                    className={`px-4 ${
+                      sortMode === "name"
+                        ? "bg-neutral-100 rounded-full text-slate-800"
+                        : ""
+                    } transition-all `}
+                  >
                     <div
                       onClick={() => onSort("name")}
                       className="flex items-center gap-3 cursor-pointer"
@@ -95,7 +101,13 @@ export function Projects() {
                       </div>
                     </div>
                   </th>
-                  <th className="px-4">
+                  <th
+                    className={`px-4 ${
+                      sortMode === "stacks"
+                        ? "bg-neutral-100 rounded-full text-slate-800"
+                        : ""
+                    } transition-all `}
+                  >
                     <div
                       onClick={() => onSort("stacks")}
                       className="flex items-center gap-3 cursor-pointer"
@@ -107,7 +119,13 @@ export function Projects() {
                       </div>
                     </div>
                   </th>
-                  <th className="px-4">
+                  <th
+                    className={`px-4 ${
+                      sortMode === "year"
+                        ? "bg-neutral-100 rounded-full text-slate-800"
+                        : ""
+                    } transition-all `}
+                  >
                     <div
                       onClick={() => onSort("year")}
                       className="flex items-center gap-3 cursor-pointer"
@@ -119,7 +137,13 @@ export function Projects() {
                       </div>
                     </div>
                   </th>
-                  <th className="px-4">
+                  <th
+                    className={`px-4 ${
+                      sortMode === "link"
+                        ? "bg-neutral-100 rounded-full text-slate-800"
+                        : ""
+                    } transition-all `}
+                  >
                     <div
                       onClick={() => onSort("link")}
                       className="flex items-center gap-3 cursor-pointer"

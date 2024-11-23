@@ -26,6 +26,7 @@ export function PortofolioCard({ project, onClickCard }: PortofolioCardProps) {
 
   return (
     <div
+      key={project.title}
       onClick={() => onClickCard(project.title)}
       className="flex flex-col lg:flex-row gap-4 lg:gap-8 p-8 hover:border-neutral-500 hover:shadow-lg lg:hover:scale-[1.05] transition-all rounded-xl hover:bg-indigo-950 text-neutral-300 hover:text-neutral-100"
       onMouseEnter={onHoverCard}
