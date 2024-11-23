@@ -3,7 +3,7 @@ import React from "react";
 import { companies } from "../../constants/companies";
 import { ExperienceCard } from "../Ui/ExperienceCard";
 import { PortofolioCard } from "../Ui/PortofolioCard";
-import { BsArrowUpRight } from "react-icons/bs";
+import { BsArrowRight, BsArrowUpRight } from "react-icons/bs";
 import { projects } from "../../constants/project";
 
 interface ContentProps {
@@ -67,7 +67,7 @@ export function Content({
             href="/projects"
             className="mt-4 text-xl flex gap-2 items-center text-neutral-300 hover:text-neutral-100 px-8"
           >
-            See more <BsArrowUpRight />
+            See more <BsArrowRight className="mt-1" />
           </Link>
         </div>
 
