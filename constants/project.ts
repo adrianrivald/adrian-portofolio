@@ -34,7 +34,7 @@ export const allProjects = [
   {
     year: "2025",
     title: "Bogasari Insight",
-    link: "https://bogasari-insight-fe.vercel.app/",
+    link: "",
     bubbles: ["React Js", "Vite", "Typescript", "React Query", "Material UI"],
   },
   {
@@ -46,7 +46,7 @@ export const allProjects = [
   {
     year: "2024",
     title: "Sismaya Helpdesk",
-    link: "https://sismedika-fe.mkahfi.id",
+    link: "",
     bubbles: [
       "React js",
       "Vite",
